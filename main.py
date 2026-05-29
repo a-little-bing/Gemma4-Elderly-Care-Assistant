@@ -25,7 +25,7 @@ RECORD_SECONDS = 5
 LOG_FILE = "emergency_log.txt"
 
 
-sd.default.device = 1
+# sd.default.device = 1
 
 # Init FastAPI
 app = FastAPI()
@@ -35,7 +35,7 @@ def parse_json_response(text):
     text = re.sub(r"```json\s*", "", text)
     text = re.sub(r"```", "", text)
     
-    match = re.search(r"\{.*\}", text, re.DOTALL)
+    match = re.search(r"\{.*?\}", text, re.DOTALL)
     
     if not match:
         raise ValueError("No JSON found")
@@ -62,7 +62,7 @@ def call_gemma(user_text):
     for word in EMERGENCY_WORDS:
         if word in lower:
             return {
-                "reply": "Please seek immediate help immediately.",
+                "reply": "Please seek immediate help.",
                 "is_emergency": True,
                 "risk_level": "high"
             }
@@ -177,7 +177,13 @@ def speech_to_text(audio_np):
 
     sf.write("temp.wav", audio_np, SAMPLE_RATE)
 
-    return model.transcribe("temp.wav")["text"].strip()
+    text = model.transcribe("temp.wav")["text"].strip()
+
+    if os.path.exists("temp.wav"):
+        os.remove("temp.wav")
+
+    return text
+
 
 # API for your HTML/PHP
 @app.post("/api/analyze")
@@ -219,4 +225,8 @@ def voice_mode():
 if __name__ == "__main__":
     print(sd.query_devices())
     voice_mode()
+    
+    
+
+
     
