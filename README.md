@@ -34,3 +34,42 @@ ollama pull gemma3:1b
 # run app
 python main.py
 ```
+
+## FFmpeg Setup (Required for Whisper)
+
+Download FFmpeg and add it to your system PATH:
+
+https://ffmpeg.org/download.html
+
+After installation, verify:
+```bash
+ffmpeg -version
+```
+
+
+## API
+
+POST /api/analyze
+
+Request:
+```json
+{
+  "user_text": "I feel dizzy"
+}
+```
+
+
+Response:
+```json
+{
+  "reply": "Please seek immediate help.",
+  "is_emergency": true,
+  "risk_level": "high"
+}
+```
+
+
+## Example
+
+Input: "I feel dizzy"
+→ Output: High risk emergency detected
