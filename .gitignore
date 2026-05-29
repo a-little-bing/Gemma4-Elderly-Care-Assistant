@@ -3,6 +3,7 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
+*.py[cod]
 
 # Virtual env
 venv/
@@ -25,3 +26,8 @@ Thumbs.db
 
 # VS Code
 .vscode/
+
+# Extras
+*.sqlite3
+.idea/
+*.zip
