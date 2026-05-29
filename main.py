@@ -1,6 +1,7 @@
 import os
 import re
 
+# change later with your own path
 os.environ["PATH"] += os.pathsep + r"C:\Users\jessl\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-8.1.1-full_build\bin"
 
 import shutil
@@ -21,7 +22,7 @@ from pydantic import BaseModel
 # API_KEY = "AIzaSyAkRieBrRJw_iDRn1z1UoQ-r87gPSyZ9Kw"
 WHISPER_MODEL = "tiny"
 SAMPLE_RATE = 16000
-RECORD_SECONDS = 5
+RECORD_SECONDS = 7
 LOG_FILE = "emergency_log.txt"
 
 
@@ -177,7 +178,9 @@ def speech_to_text(audio_np):
 
     sf.write("temp.wav", audio_np, SAMPLE_RATE)
 
-    text = model.transcribe("temp.wav")["text"].strip()
+    result = model.transcribe("temp.wav")
+    print("Detected language:", result["language"])
+    text = result["text"].strip()
 
     if os.path.exists("temp.wav"):
         os.remove("temp.wav")
@@ -200,9 +203,15 @@ def voice_mode():
         cmd = input("\nEnter to listen: ")
         if cmd.lower() == "exit":
             break
-        audio = record_audio()
+        try:
+            audio = record_audio()
+        except Exception as e:
+            print("Mic error:", e)
+            continue
+        
         text = speech_to_text(audio)
-        print("You said:", repr(text))
+        
+        print("You said:", repr(text)) 
 
         if not text.strip():
             print("No speech detected")
