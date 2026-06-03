@@ -1,0 +1,48 @@
+{
+  "system_state": "NORMAL",
+  "vision": {
+    "fall_detected": false,
+    "confidence": 0.05,
+    "label": "Normal activity",
+    "fps": 28,
+    "mode": "demo",
+    "detections": [
+      {
+        "id": "elderly-person-1",
+        "label": "person",
+        "confidence": 0.95,
+        "fall_detected": false,
+        "x": 0.42,
+        "y": 0.2,
+        "width": 0.18,
+        "height": 0.52
+      }
+    ]
+  },
+  "speech": {
+    "transcript": "",
+    "intent": "none"
+  },
+  "context": {
+    "no_response_seconds": 0,
+    "last_interaction_at": null
+  },
+  "intervention": {
+    "active": false,
+    "voice_prompt": "System is monitoring."
+  },
+  "decision": {
+    "risk_level": "low",
+    "risk_score": 12,
+    "emergency_alert": false,
+    "action": "Continue monitoring",
+    "reason": "No fall posture or abnormal response pattern is detected.",
+    "reply_analysis": "No voice check is active.",
+    "model": "mock-gemma4"
+  },
+  "emergency": {
+    "triggered": false,
+    "countdown_seconds": 10,
+    "contact_status": "Standby"
+  }
+}

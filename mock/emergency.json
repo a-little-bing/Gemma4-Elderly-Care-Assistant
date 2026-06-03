@@ -1,0 +1,48 @@
+{
+  "system_state": "EMERGENCY",
+  "vision": {
+    "fall_detected": true,
+    "confidence": 0.94,
+    "label": "Confirmed fall with no response",
+    "fps": 25,
+    "mode": "demo",
+    "detections": [
+      {
+        "id": "elderly-person-1",
+        "label": "confirmed fall",
+        "confidence": 0.94,
+        "fall_detected": true,
+        "x": 0.24,
+        "y": 0.62,
+        "width": 0.48,
+        "height": 0.17
+      }
+    ]
+  },
+  "speech": {
+    "transcript": "",
+    "intent": "none"
+  },
+  "context": {
+    "no_response_seconds": 90,
+    "last_interaction_at": null
+  },
+  "intervention": {
+    "active": true,
+    "voice_prompt": "Emergency contact will be notified now."
+  },
+  "decision": {
+    "risk_level": "high",
+    "risk_score": 100,
+    "emergency_alert": true,
+    "action": "Trigger emergency rescue",
+    "reason": "High-confidence fall, no user response, and sustained abnormal posture meet emergency criteria.",
+    "reply_analysis": "No user reply after repeated prompts.",
+    "model": "mock-gemma4"
+  },
+  "emergency": {
+    "triggered": true,
+    "countdown_seconds": 0,
+    "contact_status": "Notifying family"
+  }
+}

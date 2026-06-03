@@ -1,0 +1,48 @@
+{
+  "system_state": "WAITING_RESPONSE",
+  "vision": {
+    "fall_detected": true,
+    "confidence": 0.88,
+    "label": "Suspected fall with no movement",
+    "fps": 26,
+    "mode": "demo",
+    "detections": [
+      {
+        "id": "elderly-person-1",
+        "label": "fall",
+        "confidence": 0.88,
+        "fall_detected": true,
+        "x": 0.26,
+        "y": 0.6,
+        "width": 0.44,
+        "height": 0.18
+      }
+    ]
+  },
+  "speech": {
+    "transcript": "",
+    "intent": "none"
+  },
+  "context": {
+    "no_response_seconds": 45,
+    "last_interaction_at": null
+  },
+  "intervention": {
+    "active": true,
+    "voice_prompt": "A possible fall was detected. Please answer if you need help."
+  },
+  "decision": {
+    "risk_level": "high",
+    "risk_score": 84,
+    "emergency_alert": false,
+    "action": "Escalate warning and prepare rescue countdown",
+    "reason": "The user has not responded after the active voice check. Risk is increasing.",
+    "reply_analysis": "No Whisper transcript received.",
+    "model": "mock-gemma4"
+  },
+  "emergency": {
+    "triggered": false,
+    "countdown_seconds": 8,
+    "contact_status": "Preparing contact"
+  }
+}

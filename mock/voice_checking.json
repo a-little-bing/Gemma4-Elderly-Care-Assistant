@@ -1,0 +1,48 @@
+{
+  "system_state": "VOICE_CHECKING",
+  "vision": {
+    "fall_detected": true,
+    "confidence": 0.84,
+    "label": "Fall posture under verification",
+    "fps": 29,
+    "mode": "demo",
+    "detections": [
+      {
+        "id": "elderly-person-1",
+        "label": "fall check",
+        "confidence": 0.84,
+        "fall_detected": true,
+        "x": 0.28,
+        "y": 0.58,
+        "width": 0.42,
+        "height": 0.18
+      }
+    ]
+  },
+  "speech": {
+    "transcript": "",
+    "intent": "none"
+  },
+  "context": {
+    "no_response_seconds": 12,
+    "last_interaction_at": null
+  },
+  "intervention": {
+    "active": true,
+    "voice_prompt": "Are you okay? Please answer if you can hear me."
+  },
+  "decision": {
+    "risk_level": "medium",
+    "risk_score": 64,
+    "emergency_alert": false,
+    "action": "Ask the user for a safety confirmation",
+    "reason": "A possible fall is detected, so the assistant starts an active voice check.",
+    "reply_analysis": "Waiting for Whisper transcript.",
+    "model": "mock-gemma4"
+  },
+  "emergency": {
+    "triggered": false,
+    "countdown_seconds": 10,
+    "contact_status": "Standby"
+  }
+}

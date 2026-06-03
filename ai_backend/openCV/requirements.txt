@@ -1,0 +1,11 @@
+fastapi==0.115.6
+uvicorn==0.34.0
+pydantic==2.10.4
+python-dotenv==1.0.1
+requests==2.32.3
+numpy<2
+opencv-python==4.10.0.84
+ultralytics==8.3.55
+
+# Enable when replacing demo adapters with real models.
+# openai-whisper==20240930

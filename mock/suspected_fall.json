@@ -1,0 +1,48 @@
+{
+  "system_state": "SUSPECTED_FALL",
+  "vision": {
+    "fall_detected": true,
+    "confidence": 0.82,
+    "label": "Suspected fall posture",
+    "fps": 27,
+    "mode": "demo",
+    "detections": [
+      {
+        "id": "elderly-person-1",
+        "label": "suspected fall",
+        "confidence": 0.82,
+        "fall_detected": true,
+        "x": 0.29,
+        "y": 0.57,
+        "width": 0.41,
+        "height": 0.19
+      }
+    ]
+  },
+  "speech": {
+    "transcript": "",
+    "intent": "none"
+  },
+  "context": {
+    "no_response_seconds": 5,
+    "last_interaction_at": null
+  },
+  "intervention": {
+    "active": false,
+    "voice_prompt": "Fall-like posture detected. Preparing voice check."
+  },
+  "decision": {
+    "risk_level": "medium",
+    "risk_score": 58,
+    "emergency_alert": false,
+    "action": "Prepare active voice check",
+    "reason": "YOLO reports a fall-like posture. The system should ask the user for confirmation before rescue escalation.",
+    "reply_analysis": "No reply has been requested yet.",
+    "model": "mock-gemma4"
+  },
+  "emergency": {
+    "triggered": false,
+    "countdown_seconds": 10,
+    "contact_status": "Standby"
+  }
+}
