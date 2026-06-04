@@ -1,20 +1,20 @@
 {
     "vision": {
         "fall_detected": false,
-        "confidence": 0.9062,
+        "confidence": 0.8854,
         "label": "person",
-        "fps": 8,
+        "fps": 9,
         "detections": [
             {
                 "id": "person-1",
                 "class_id": 0,
                 "label": "person",
-                "confidence": 0.9062,
+                "confidence": 0.8854,
                 "fall_detected": false,
-                "x": 0.17165,
-                "y": 0.266472,
-                "width": 0.80265,
-                "height": 0.732419
+                "x": 0.091656,
+                "y": 0.358311,
+                "width": 0.873857,
+                "height": 0.640843
             }
         ],
         "mode": "camera",
@@ -24,8 +24,10 @@
         "model_ready": true
     },
     "speech": {
-        "transcript": "",
-        "intent": "none"
+        "transcript": "没事了,我很好",
+        "intent": "safe",
+        "source": "C:\\Users\\35135\\AppData\\Local\\Temp\\tmpptgv0kmv.webm",
+        "model": "whisper-base"
     },
     "context": {
         "no_response_seconds": 0,
@@ -37,12 +39,13 @@
     },
     "decision": {
         "risk_level": "low",
-        "risk_score": 21,
+        "risk_score": 13,
         "emergency_alert": false,
-        "action": "Continue monitoring",
-        "reason": "No fall is currently detected. Person confidence is 91%.",
-        "reply_analysis": "No active voice check.",
-        "model": "gemma4-demo-rule-engine"
+        "action": "User confirmed safe",
+        "reason": "The user gave a safe voice reply and vision does not detect a fall.",
+        "reply_analysis": "User replied: 没事了,我很好",
+        "model": "gemma4-rule-fallback",
+        "gemma_error": "404 Client Error: Not Found for url: http:\/\/127.0.0.1:11434\/api\/chat"
     },
     "emergency": {
         "triggered": false,
@@ -50,10 +53,10 @@
         "contact_status": "Standby"
     },
     "ai_backend": {
-        "last_update_at": "2026-06-03T15:51:46+08:00",
+        "last_update_at": "2026-06-04T12:57:20+08:00",
         "source": "browser-camera-yolo",
-        "pipeline_id": "b404ae3f-6671-4ec3-814d-81b19cf704d7"
+        "pipeline_id": "82d3d8e5-f875-4006-9356-d4274c0ebd60"
     },
-    "updated_at": "2026-06-03T15:51:46+08:00",
+    "updated_at": "2026-06-04T12:57:20+08:00",
     "system_state": "NORMAL"
 }
